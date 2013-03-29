@@ -1,5 +1,60 @@
 <html>
 <script src="jquery-1.9.1.js"></script>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <title>rock scissor paper game</title>
-
+<div align=center>
+<h1>Let's play Rock Paper Scissor!</h1><br>
+<br><p>Choose one of your choise.<p><br>
+<button id='r' class="btn btn-large btn-info" type="button"><i class="icon-tint icon-white"></i> Rock</button> 
+<button id='p' class="btn btn-large btn-success" type="button"><i class="icon-leaf icon-white"></i> Paper</button>
+<button id='s' class="btn btn-large btn-danger" type="button"><i class="icon-fire icon-white"></i> Scissor</button> 
+<br></div>
+<div id='f'></div>
+<div id='t'></div>
+<script>
+$(document).ready(function(){
+	$("#r").click(function(){
+		var random = Math.floor(Math.random()*3)
+		if(random==0){
+			$("#f").html("<div align=center><h3>Computer has choosen</h3><br><button class=\"btn btn-large btn-info\" type=\"button\"><i class=\"icon-tint icon-white\"></i> Rock</button> </div>")
+			$("#t").html("<div align=center><h3>Draw!!</h3></div>")
+		}
+		if(random==1){
+			$("#f").html("<div align=center><h3>Computer has choosen</h3><br><button class=\"btn btn-large btn-success\" type=\"button\"><i class=\"icon-leaf icon-white\"></i> Paper</button> </div>")
+			$("#t").html("<div align=center><h3>You loss!!</h3></div>")
+		}
+		if(random==2){
+			$("#f").html("<div align=center><h3>Computer has choosen</h3><br><button class=\"btn btn-large btn-danger\" type=\"button\"><i class=\"icon-fire icon-white\"></i> Scissor</button> </div>")
+			$("#t").html("<div align=center><h3>You win!!</h3></div>")
+		}
+	})
+	$("#p").click(function(){
+		var random = Math.floor(Math.random()*3)
+		if(random==0){	
+			$("#f").html("<div align=center><h3>Computer has choosen</h3><br><button class=\"btn btn-large btn-info\" type=\"button\"><i class=\"icon-tint icon-white\"></i> Rock</button> </div>")
+			$("#t").html("<div align=center><h3>You win!!</h3></div>")
+		}
+		if(random==1){
+			$("#f").html("<div align=center><h3>Computer has choosen</h3><br><button class=\"btn btn-large btn-success\" type=\"button\"><i class=\"icon-leaf icon-white\"></i> Paper</button> </div>")
+			$("#t").html("<div align=center><h3>Draw!!</h3></div>")
+		}
+		if(random==2){
+			$("#f").html("<div align=center><h3>Computer has choosen</h3><br><button class=\"btn btn-large btn-danger\" type=\"button\"><i class=\"icon-fire icon-white\"></i> Scissor</button> </div>")
+			$("#t").html("<div align=center><h3>You loss!!</h3></div>")
+		}})
+	$("#s").click(function(){
+		var random = Math.floor(Math.random()*3)
+		if(random==0){
+			$("#f").html("<div align=center><h3>Computer has choosen</h3><br><button class=\"btn btn-large btn-info\" type=\"button\"><i class=\"icon-tint icon-white\"></i> Rock</button> </div>")
+			$("#t").html("<div align=center><h3>You loss!!</h3></div>")
+		}
+		if(random==1){
+			$("#f").html("<div align=center><h3>Computer has choosen</h3><br><button class=\"btn btn-large btn-success\" type=\"button\"><i class=\"icon-leaf icon-white\"></i> Paper</button> </div>")
+			$("#t").html("<div align=center><h3>You win!!</h3></div>")
+		}
+		if(random==2){
+			$("#f").html("<div align=center><h3>Computer has choosen</h3><br><button class=\"btn btn-large btn-danger\" type=\"button\"><i class=\"icon-fire icon-white\"></i> Scissor</button> </div>")
+			$("#t").html("<div align=center><h3>Draw!!</h3></div>")
+		}})
+})</script>	
 </html>
