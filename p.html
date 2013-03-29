@@ -1,0 +1,24 @@
+<html>
+<script src="jquery-1.9.1.js"></script>
+<title>Simple Chat</title>
+<body>
+<div>Name: <input type="text" id="n"></div>
+<div>Message: <input type="text" id="m"></div>
+<button type="button" id="s">Send</button>
+</body>
+<div id="d"><br></div>
+<script>
+$(document).ready(function(){
+	$("#s").click(function(){
+		var ni = $("#n").val();
+		var mi = $("#m").val();
+		$("#n").val("");
+		$("#m").val("");
+		$("#d").append(
+			"<div>["+ni+"] says : "+mi+"</div>"
+		);
+	})
+});
+</script>
+</html>
+
