@@ -2,22 +2,29 @@
 <script src="jquery-1.9.1.js"></script>
 <title>Simple Chat</title>
 <body>
-<div>Name: <input type="text" id="n"></div>
-<div>Message: <input type="text" id="m"></div>
-<button id="s">Send</button>
+<div align=right><a href="index.html">back to index</a></div>
+<div align=center>Name : <input type="text" id="n"><br>
+	Message : <input type="text" id="m"><br>
+	<button id="s">Send</button><button id="c">Clear</button></div>
 </body>
-<div id="d"><br></div>
+<div id="d" align=center></div>
+
+
 <script>
 $(document).ready(function(){
 	$("#s").click(function(){
 		var ni = $("#n").val();
 		var mi = $("#m").val();
-		$("#n").val("");
 		$("#m").val("");
 		$("#d").append(
-			"<div>["+ni+"] says : "+mi+"</div>"
+			"<div>[ "+ni+" ] says : "+mi+"</div>"
 		);
-	})
+	});
+	$("#c").click(function(){
+		$("#n").val("");
+		$("#m").val("");
+		$("#d").empty();
+	});
 });
 </script>
 </html>
