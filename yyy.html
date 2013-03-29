@@ -1,23 +1,49 @@
 
 <html>
   <head>
-    <title>Bootstrap 101 Template</title>
+    <title>Yun Yi Yao</title>
   </head>
   <body>
-    <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-<form>
-  <fieldset>
-    <legend>Legend</legend>
-    <label>Label name</label>
-    <input type="text" placeholder="Type something…">
-    <span class="help-block">Example block-level help text here.</span>
-    <label class="checkbox">
-      <input type="checkbox"> Check me out
-    </label>
-    <button type="submit" class="btn">Submit</button>
-  </fieldset>
-</form>
+  	<script src="jquery-1.9.1.js"></script>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+
+ <center>
+<button id="w" class="btn btn-large btn-info" type="button"><i class="icon-tint" ></i> Water</button>
+<button class="btn btn-large btn-danger" type="button"><i class="icon-fire"></i> Fire</button><br>
+<button id="l" class="btn btn-large btn-success" type="button"><i class="icon-leaf"></i> Leaf</button>
+<button class="btn btn-large btn-success" type="button"><i class="icon-leaf"></i> Leaf </button><br>
+<button id="f" class=" btn btn-large btn-danger" type="button"><i class="icon-fire" ></i> Fire</button>
+<button class=" btn btn-large btn-info" type="button"><i class="icon-tint"></i> Water</button>
+<div id="r"><br>Result</div> 
+</center>
+	<script> 
+	$(document).ready(function(){
+		$('#w').click(function(){
+			var wf = Math.floor(Math.random()*3)
+			console.log(wf)
+			if(wf==0) $('#r').html("draw") 
+			else if(wf==1) $('#r').html("You Lose")
+			else if(wf==2) $('#r').html("You Win")
+		})
+		$('#l').click(function(){
+			var wf = Math.floor(Math.random()*3)
+			console.log(wf)
+			if(wf==1) $('#r').html("draw") 
+			else if(wf==2) $('#r').html("You Lose")
+			else if(wf==0) $('#r').html("You Win")
+		})
+		$('#f').click(function(){
+			var wf = Math.floor(Math.random()*3)
+			console.log(wf)
+			if(wf==2) $('#r').html("draw") 
+			else if(wf==0) $('#r').html("You Lose")
+			else if(wf==1) $('#r').html("You Win")
+		})
+	})
+	</script>
+
 </body>
+
 
 </html>
