@@ -1,0 +1,24 @@
+<html>
+<script src="jquery-1.9.1.js"></script>
+ <title>sandbox_b</title>
+<center>
+  <form>
+  Name:<input type="text"  id="n" ><br>
+  Massage: <input type="text"  id="m"><br>
+  </form></center>
+<center><button type="button" id="s" >Sent Massage</button></center>
+	<div id="w"><br></div>
+	<script>
+	$(document).ready(function(){
+		$('#s').click(function(){
+			var na = $('#n').val();
+			var ma = $('#m').val();
+			$('#w').append(
+				"<div>["+na+"] say :: ["+ma+"]</div>");
+		})
+	
+	})
+
+</script>
+
+</html>
