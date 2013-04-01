@@ -1,5 +1,7 @@
 <html>
 <div id="fb-root"></div>
+<script src="jquery-1.9.1.js"></script>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -11,9 +13,20 @@
 <body bgcolor=black>
 	<!--back--><div align=right ><a href="index.html">back to index</a></div>
 	<div align=center>
-	<iframe src="http://www.figabyte.com/" width="600" height="400"></iframe><br><br>
+	<div><br>
+    <h4>Facebook data</h4>
+    <input type="text" placeholder="Type fb username here" class="input-large" id="type">
+    <button type="submit" class="btn" id="button">Submit</button>
+	<br></div>
+	<div id="asd"></div>
 	<!--like--><div class="fb-like" data-href="http://boaonoko.github.com/sandbox/pfbapi.html" data-send="true" data-width="450" data-show-faces="true" data-colorscheme="dark"></div>
 	<br>
  	<!--comment--><div class="fb-comments" data-href="http://boaonoko.github.com/sandbox/pfbapi.html" data-width="470" data-num-posts="10" data-colorscheme="dark"></div></div>
 </body>
+<script>
+$(document).ready(function(){
+	$("#button").click(function(){
+		asd.html($.get('http://graph.facebook.com/ppvphilosopher'))
+	})})
+<!--// $.get('http://graph.facebook.com/ppvphilosopher').complete(function(e){console.log(e.responseText)})-->
 </html>
