@@ -28,7 +28,7 @@
 $(document).ready(function(){
 	$("#b").click(function(){
 		var input = $("#i").val()
-		$("#i").empty()
+		$("#i").val("")
 		$.get("http://graph.facebook.com/"+input).complete(function(e){
 			var d = e.responseText
 			$("#asd").html(d)
