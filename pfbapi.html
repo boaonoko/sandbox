@@ -11,10 +11,11 @@
 }(document, 'script', 'facebook-jssdk'));</script>
 <title>FB API</title>
 <body>
-	<!--back--><div align=right ><a href="index.html">back to index</a></div>
+	<div align=right ><a href="index.html">back to index</a></div>
 	<div align=center>
 	<div>
-    <input class="span2" id="i" type="text">
+	<h4>Check facebook id</h4><br>
+    <input class="span4" id="i" type="text" placeholder="type facebook id here">
     <button class="btn" type="button" id="b">Go!</button>
     <br></div>
 	<div id="asd"></div><br><br>
@@ -27,6 +28,7 @@
 $(document).ready(function(){
 	$("#b").click(function(){
 		var input = $("#i").val()
+		$("#i").empty()
 		$.get('http://graph.facebook.com/ppvphilosopher').complete(function(e){
 			var d = e.responseText
 			$("#asd").html(d)
