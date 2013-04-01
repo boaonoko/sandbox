@@ -13,20 +13,25 @@
 <body>
 	<!--back--><div align=right ><a href="index.html">back to index</a></div>
 	<div align=center>
-	<div class="input-append">
-    <input class="span2" id="appendedInputButton" type="text">
-    <button class="btn" type="button">Go!</button>
+	<div>
+    <input class="span2" id="i" type="text">
+    <button class="btn" type="button" id="b">Go!</button>
     <br></div>
 	<div id="asd"></div><br><br>
-	<!--like--><div class="fb-like" data-href="http://boaonoko.github.com/sandbox/pfbapi.html" data-send="true" data-width="450" data-show-faces="true"></div>
+	<div class="fb-like" data-href="http://boaonoko.github.com/sandbox/pfbapi.html" data-send="true" data-width="450" data-show-faces="true"></div>
 	<br><br>
- 	<!--comment--><div class="fb-comments" data-href="http://boaonoko.github.com/sandbox/pfbapi.html" data-width="470" data-num-posts="10"></div></div>
+ 	<div class="fb-comments" data-href="http://boaonoko.github.com/sandbox/pfbapi.html" data-width="470" data-num-posts="10"></div>
+ 	</div>
 </body>
 <script>
 $(document).ready(function(){
-	$("#button").click(function(){
-		$.get('http://graph.facebook.com/ppvphilosopher').complete(function(e){asd.html(e.responseText)})
+	$("#b").click(function(){
+		var input = $("#i").val()
+		$.get('http://graph.facebook.com/ppvphilosopher').complete(function(e){
+			var d = e.responseText
+			$("#asd").html(d)
+		})
 	})
 })
-<!--// $.get('http://graph.facebook.com/ppvphilosopher').complete(function(e){console.log(e.responseText)})-->
+</script>
 </html>
