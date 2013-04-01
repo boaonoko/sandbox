@@ -29,7 +29,7 @@ $(document).ready(function(){
 	$("#b").click(function(){
 		var input = $("#i").val()
 		$("#i").empty()
-		$.get('http://graph.facebook.com/ppvphilosopher').complete(function(e){
+		$.get("http://graph.facebook.com/"+input).complete(function(e){
 			var d = e.responseText
 			$("#asd").html(d)
 		})
