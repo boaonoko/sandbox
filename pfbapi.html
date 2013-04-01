@@ -1,5 +1,7 @@
 <html>
 <div id="fb-root"></div>
+<script src="jquery-1.9.1.js"></script>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -8,11 +10,34 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 <title>FB API</title>
-<body bgcolor=black>
+<body>
 	<div align=right ><a href="index.html">back to index</a></div>
-	<div align=center><br>
-	<div class="fb-like" data-href="http://boaonoko.github.com/sandbox/pfbapi.html" data-send="true" data-width="450" data-show-faces="true" data-colorscheme="dark"></div>
-	<br>
- 	<div class="fb-comments" data-href="http://boaonoko.github.com/sandbox/pfbapi.html" data-width="470" data-num-posts="10" data-colorscheme="dark"></div></div>
+	<div align=center>
+	<div>
+	<h4>Check facebook id</h4><br>
+    <input class="span4" id="i" type="text" placeholder="type facebook id here">
+    <button class="btn" type="button" id="b">Go!</button>
+    <br><br></div>
+	<div id="asd"></div><br><br>
+	<div class="fb-like" data-href="http://boaonoko.github.com/sandbox/pfbapi.html" data-send="true" data-width="450" data-show-faces="true"></div>
+	<br><br>
+ 	<div class="fb-comments" data-href="http://boaonoko.github.com/sandbox/pfbapi.html" data-width="470" data-num-posts="10"></div>
+ 	</div>
 </body>
+<script>
+$(document).ready(function(){
+	$("#b").click(function(){
+		var input = $("#i").val()
+		$("#i").val("")
+		$.get("http://graph.facebook.com/"+input).complete(function(e){
+			var d = JSON.parse(e.responseText)
+			$("#asd").html('<table border="1"><tr><td> ID </td><td> '+
+				d.id+' </td></tr><tr><td> name </td><td> '+
+				d.name+' </td></tr><tr><td> first_name </td><td> '+
+				d.first_name+' </td></tr><tr><td> last_name </td><td> '+
+				d.last_name+' </td></tr><tr><td> username </td><td> '+
+				d.username+' </td></tr><tr><td> gender </td><td> '+
+				d.gender+' </td></tr><tr><td> locale </td><td> '+
+				d.locale+' </td></tr></table>')})})})
+</script>
 </html>
