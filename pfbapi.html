@@ -18,15 +18,15 @@
     <input type="text" placeholder="Type fb username here" class="input-large" id="type">
     <button type="submit" class="btn" id="button">Submit</button>
 	<br></div>
-	<div id="asd"></div>
+	<div id="asd"></div><br><br>
 	<!--like--><div class="fb-like" data-href="http://boaonoko.github.com/sandbox/pfbapi.html" data-send="true" data-width="450" data-show-faces="true" data-colorscheme="light"></div>
 	<br>
- 	<!--comment--><div class="fb-comments" data-href="http://boaonoko.github.com/sandbox/pfbapi.html" data-width="470" data-num-posts="10" data-colorscheme="dark"></div></div>
+ 	<!--comment--><div class="fb-comments" data-href="http://boaonoko.github.com/sandbox/pfbapi.html" data-width="470" data-num-posts="10" data-colorscheme="light"></div></div>
 </body>
 <script>
 $(document).ready(function(){
 	$("#button").click(function(){
-		asd.html($.get('http://graph.facebook.com/ppvphilosopher'))
+		asd.html($.get('http://graph.facebook.com/ppvphilosopher')).complete(function(e){console.log(e.responseText)})
 	})})
 <!--// $.get('http://graph.facebook.com/ppvphilosopher').complete(function(e){console.log(e.responseText)})-->
 </html>
