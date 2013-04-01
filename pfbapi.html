@@ -17,7 +17,7 @@
 	<h4>Check facebook id</h4><br>
     <input class="span4" id="i" type="text" placeholder="type facebook id here">
     <button class="btn" type="button" id="b">Go!</button>
-    <br></div>
+    <br><br></div>
 	<div id="asd"></div><br><br>
 	<div class="fb-like" data-href="http://boaonoko.github.com/sandbox/pfbapi.html" data-send="true" data-width="450" data-show-faces="true"></div>
 	<br><br>
@@ -30,8 +30,15 @@ $(document).ready(function(){
 		var input = $("#i").val()
 		$("#i").val("")
 		$.get("http://graph.facebook.com/"+input).complete(function(e){
-			var d = e.responseText
-			$("#asd").html(d)
+			var d = JSON.parse(e.responseText)
+			$("#asd").html('<table border="1">'+
+				'<tr><td> ID </td><td> '+d.id+' </td></tr>'+
+				'<tr><td> name </td><td> '+d.name+' </td></tr>'+
+				'<tr><td> first_name </td><td> '+d.first_name+' </td></tr>'+
+				'<tr><td> last_name </td><td> '+d.last_name+' </td></tr>'+
+				'<tr><td> username </td><td> '+d.username+' </td></tr>'+
+				'<tr><td> gender </td><td> '+d.gender+' </td></tr>'+
+				'<tr><td> locale </td><td> '+d.locale+' </td></tr></table>')
 		})
 	})
 })
